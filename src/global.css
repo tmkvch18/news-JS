@@ -1,4 +1,12 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
+    min-width: 320px;
+    margin: 0;
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
@@ -13,23 +21,47 @@ header h1 {
     font-weight: 800;
 }
 
+main {
+    padding: 0 30px;
+}
+
 footer {
-    height: 100px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 10px 24px;
+    padding: 24px 30px;
+    font-size: 14px;
+    color: #888;
+}
+footer a {
+    color: #aaa;
+}
+footer a:hover {
+    color: #5ad67d;
+}
+footer .footer__rss img {
+    display: block;
 }
 footer .copyright {
-    font-size: 14px;
-    color: #333;
+    width: 100%;
+    margin: 0;
     text-align: center;
-}
-footer .copyright a {
-    color: #444;
-}
-footer .copyright a:hover {
-    color: #555;
 }
 footer .copyright:before {
     content: '©';
+}
+
+@media (max-width: 640px) {
+    header,
+    main,
+    footer {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
 }

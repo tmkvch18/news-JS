@@ -57,6 +57,7 @@
     background: #fff;
     position: relative;
     z-index: 1;
+    overflow-wrap: anywhere;
 }
 
 .news__item .news__description h2 {
