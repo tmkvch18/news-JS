@@ -8,12 +8,15 @@ export enum HttpStatus {
     NotFound = 404,
 }
 
+export type SourceCategory = 'business' | 'entertainment' | 'general' | 'health' | 'science' | 'sports' | 'technology';
+export type CategoryFilter = SourceCategory | 'all';
+
 export interface Source {
     id: string;
     name: string;
     description: string;
     url: string;
-    category: string;
+    category: SourceCategory;
     language: string;
     country: string;
 }
@@ -53,7 +56,7 @@ export interface RequestParams {
 }
 
 export type ApiKeyParams = Pick<QueryParams, 'apiKey'>;
-export type SourceItem = Pick<Source, 'id' | 'name'>;
+export type SourceItem = Pick<Source, 'id' | 'name' | 'category'>;
 
 export type Callback<T> = (data: T) => void;
 
